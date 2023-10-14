@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Auth;
 
         if($booking){
 
+
+
             $response['booking'] = new BookingResource($booking);
             $response['success'] = true;
             $response['msg'] ='Room Created successfully';
@@ -36,8 +38,8 @@ use Illuminate\Support\Facades\Auth;
         $bookings=BookingRepo::getAll();
 
         if($bookings){
-            // $response['room'] = new BookingResource($bookings);
-            $response['room'] =$bookings;
+
+            $response['data'] =BookingResource::collection($bookings);
             $response['success'] = true;
             $response['msg'] ='Rooms Retrieved successfully';
             return response()->json($response,200);

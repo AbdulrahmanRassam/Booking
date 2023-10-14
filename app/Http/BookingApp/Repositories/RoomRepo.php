@@ -14,12 +14,18 @@ class RoomRepo
     public static function create($input):Room
     {
 
-          return Room::create($input);
+          return Room::create([
+            'room_no'=>$input['room_no'],
+            'price'=>$input['price'],
+            'type_code'=>$input['type'],
+            'status_code'=>'RoomStatusAvailablePro',
+          ]);
     }
+
 
     public static function getAll()
     {
-      return Room::where('status_code','!=','RoomStatusBookedPro')->get();
+      return Room::where('status_code','!=','RoomStatusBookedPro')->latest()->get();
     }
 
 }

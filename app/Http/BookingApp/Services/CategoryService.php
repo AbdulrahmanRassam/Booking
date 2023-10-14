@@ -38,8 +38,7 @@ use Illuminate\Support\Facades\Auth;
 
         if($Categorys){
 
-            $response['Categorys'] =CategoryResource::collection($Categorys);
-
+            $response['data'] =CategoryResource::collection($Categorys);
             $response['success'] = true;
             $response['msg'] ='Categorys Retrieved successfully';
             return response()->json($response,200);

@@ -28,13 +28,13 @@ class Room extends Model
      */
     public function status()
     {
-        return $this->belongsTo(Config::class,'status_code','prog_name')->where('father','RoomStatusPro');
+        return $this->belongsTo(Config::class,'status_code','prog_name');//->where('father','RoomStatusPro');
     }
      /**
      * Get the Room type associated with the user.
      */
     public function type()
     {
-        return $this->belongsTo(Config::class,'type_code','prog_name')->where('father','RoomTypesPro');
+        return $this->belongsTo(Config::class,'type_code','prog_name');//->where('father','RoomTypesPro');
     }
 }

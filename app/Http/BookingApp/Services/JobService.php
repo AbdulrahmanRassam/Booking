@@ -38,7 +38,7 @@ use Illuminate\Support\Facades\Auth;
 
         if($Jobs){
 
-            $response['Jobs'] =JobResource::collection($Jobs);
+            $response['data'] =JobResource::collection($Jobs);
 
             $response['success'] = true;
             $response['msg'] ='Jobs Retrieved successfully';

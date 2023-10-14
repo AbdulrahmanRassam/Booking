@@ -18,7 +18,7 @@ class UserRepo
                 'name' => $input['name'],
                 'email' => $input['email'],
                 'password' => Hash::make($input['password']),
-                'role_code'=>'RoleEmployeePro'
+                'role_code'=>'RoleUserPro'
             ]);
 
 

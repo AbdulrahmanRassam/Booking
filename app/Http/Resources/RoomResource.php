@@ -17,7 +17,7 @@ class RoomResource extends JsonResource
         return [
             'room_no'=>$this->room_no,
             'price'=>$this->price,
-            'photo_url'=>$this->photo_url,
+            'photo_url'=>$this->photo_path,
             'type'=>$this->type->name,
             'status'=>$this->status->name,
         ];

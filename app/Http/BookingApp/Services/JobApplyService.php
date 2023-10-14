@@ -36,8 +36,7 @@ use Illuminate\Support\Facades\Auth;
         $bookings=JobApplyRepo::getAll();
 
         if($bookings){
-            // $response['room'] = new JobApplyResource($bookings);
-            $response['room'] =$bookings;
+            $response['data'] =JobApplyResource::collection($bookings);
             $response['success'] = true;
             $response['msg'] ='Rooms Retrieved successfully';
             return response()->json($response,200);

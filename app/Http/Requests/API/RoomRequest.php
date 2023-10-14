@@ -25,8 +25,8 @@ class RoomRequest extends FormRequest
         return [
             'room_no' => ['required', 'numeric'],
             'price' => ['required', 'numeric'],
-            'type_code' => ['required', 'string', 'exists:configs,prog_name'],
-            'status_code' => ['required', 'string', 'exists:configs,prog_name'],
+            'type' => ['required', 'string'],
+            // 'status_code' => ['required', 'string', 'exists:configs,prog_name'],
         ];
     }
 }

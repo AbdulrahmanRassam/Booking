@@ -15,7 +15,11 @@ use Illuminate\Support\Facades\Auth;
      */
     public static function create( $request){
 
+
+        $request['type']=$request['type']=='Available'?'RoomTypeSinglePro':($request['type']=='Double'?'RoomTypeDoublePro':'RoomTypeSuitePro');
         $room=RoomRepo::create($request);
+        $room->photo_path='https://source.unsplash.com/random/?sig=room'. $room->id;
+        $room->save();
 
         if($room){
 
@@ -38,9 +42,7 @@ use Illuminate\Support\Facades\Auth;
 
         if($rooms){
 
-            // $response['room'] = new RoomResource($rooms);
-            $response['room'] =$rooms;
-
+            $response['data'] =RoomResource::collection($rooms);
             $response['success'] = true;
             $response['msg'] ='Rooms Retrieved successfully';
             return response()->json($response,200);
