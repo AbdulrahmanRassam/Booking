@@ -53,8 +53,8 @@ use Illuminate\Support\Facades\Auth;
         $bookings=BookingRepo::getRequests();
 
         if($bookings){
-            $response['bookings'] =BookingResource::collection($bookings);
-            // $response['bookingsX'] =$bookings;
+            $response['data'] =BookingResource::collection($bookings);
+
             $response['success'] = true;
             $response['msg'] ='Rooms Retrieved successfully';
             return response()->json($response,200);

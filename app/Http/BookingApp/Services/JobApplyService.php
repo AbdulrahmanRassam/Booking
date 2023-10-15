@@ -50,8 +50,8 @@ use Illuminate\Support\Facades\Auth;
         $bookings=JobApplyRepo::getRequests();
 
         if($bookings){
-            $response['bookings'] =JobApplyResource::collection($bookings);
-            // $response['bookingsX'] =$bookings;
+            $response['data'] =JobApplyResource::collection($bookings);
+
             $response['success'] = true;
             $response['msg'] ='Rooms Retrieved successfully';
             return response()->json($response,200);
