@@ -77,4 +77,17 @@ use Illuminate\Support\Facades\Auth;
             return response()->json($response,404);
         }
     }
+    public static function rejectRequest($id){
+        $accepted=BookingRepo::rejectRequest($id);
+
+        if($accepted){
+            $response['success'] = true;
+            $response['msg'] ='Room Booking rejected successfully';
+            return response()->json($response,200);
+        }else{
+            $response['success'] = false;
+            $response['msg'] ='There is an Error';
+            return response()->json($response,404);
+        }
+    }
 }

@@ -18,5 +18,9 @@ class CategoryRepo
     {
       return Category::where('status',true)->get();
     }
+    public static function getID($name)
+    {
+      return Category::where('name',$name)->value('id');
+    }
 
 }

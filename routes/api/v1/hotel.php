@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
             Route::post('/add-room', [\App\Http\Controllers\API\RoomController::class, 'create'])->name('add-room');
             Route::get('/booking-requests', [\App\Http\Controllers\API\BookingController::class, 'getRequests'])->name('booking-requests');
             Route::post('/accept-request/{id}', [\App\Http\Controllers\API\BookingController::class, 'accept'])->name('accept-request');
+            Route::post('/reject-request/{id}', [\App\Http\Controllers\API\BookingController::class, 'reject'])->name('reject-request');
 
             Route::post('/add-job', [\App\Http\Controllers\API\JobController::class, 'create'])->name('add-job');
     });

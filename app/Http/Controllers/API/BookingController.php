@@ -23,4 +23,7 @@ class BookingController extends Controller
         public function accept($id){
        return BookingFacade::acceptRequest($id);
     }
+        public function reject($id){
+       return BookingFacade::rejectRequest($id);
+    }
 }

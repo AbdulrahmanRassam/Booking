@@ -2,10 +2,7 @@
 
 namespace App\Http\BookingApp\Repositories;
 
-use App\Http\Resources\UserResource;
 use App\Models\Job;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
 class JobRepo
 {

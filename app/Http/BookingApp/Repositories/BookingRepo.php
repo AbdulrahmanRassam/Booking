@@ -36,5 +36,9 @@ class BookingRepo
     {
         return Booking::where('id',$id)->update(['status_code' => 'BookingStatusApprovedPro']);
     }
+    public static function rejectRequest($id)
+    {
+        return Booking::where('id',$id)->update(['status_code' => 'BookingStatusRejectedPro']);
+    }
 
 }

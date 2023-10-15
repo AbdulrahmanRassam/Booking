@@ -28,7 +28,7 @@ class JobRequest extends FormRequest
             'city' => ['required', 'string'],
             'salary' => ['required', 'numeric'],
             'expire_on' => ['required', 'date'],
-            'category_id' => ['required', 'exists:categories,id'],
+            'category' => ['required'],
         ];
     }
 }

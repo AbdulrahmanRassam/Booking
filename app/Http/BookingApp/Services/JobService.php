@@ -2,6 +2,7 @@
 
 namespace App\Http\BookingApp\Services;
 use App\Http\BookingApp\Contracts\JobContract;
+use App\Http\BookingApp\Repositories\CategoryRepo;
 use App\Http\BookingApp\Repositories\JobRepo;
 use App\Http\Resources\JobResource;
 use Illuminate\Support\Facades\Auth;
@@ -15,11 +16,13 @@ use Illuminate\Support\Facades\Auth;
      */
     public static function create( $request){
 
+        $id=CategoryRepo::getID($request['category']);
+        $request['category_id']=$id??1;
         $Job=JobRepo::create($request);
 
         if($Job){
 
-            $response['Job'] = new JobResource($Job);
+            $response['data'] = new JobResource($Job);
 
             $response['success'] = true;
             $response['msg'] ='Job Created successfully';

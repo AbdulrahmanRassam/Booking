@@ -38,7 +38,7 @@ use Illuminate\Support\Facades\Auth;
         if($bookings){
             $response['data'] =JobApplyResource::collection($bookings);
             $response['success'] = true;
-            $response['msg'] ='Rooms Retrieved successfully';
+            $response['msg'] ='Jobs Applies Retrieved successfully';
             return response()->json($response,200);
         }else{
             $response['success'] = false;
@@ -53,7 +53,7 @@ use Illuminate\Support\Facades\Auth;
             $response['data'] =JobApplyResource::collection($bookings);
 
             $response['success'] = true;
-            $response['msg'] ='Rooms Retrieved successfully';
+            $response['msg'] ='Jobs Applies Retrieved successfully';
             return response()->json($response,200);
         }else{
             $response['success'] = false;
@@ -66,7 +66,7 @@ use Illuminate\Support\Facades\Auth;
 
         if($accepted){
             $response['success'] = true;
-            $response['msg'] ='Room Booked successfully';
+            $response['msg'] ='Job Request Accepted successfully';
             return response()->json($response,200);
         }else{
             $response['success'] = false;
@@ -79,7 +79,7 @@ use Illuminate\Support\Facades\Auth;
 
         if($rejected){
             $response['success'] = true;
-            $response['msg'] ='Room Booked successfully';
+            $response['msg'] ='Job Request Rejected successfully';
             return response()->json($response,200);
         }else{
             $response['success'] = false;

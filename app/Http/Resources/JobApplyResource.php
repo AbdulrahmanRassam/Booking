@@ -16,7 +16,9 @@ class JobApplyResource extends JsonResource
     {
         return [
             'user_id'=>$this->user_id,
+            'user'=>$this->user->name,
             'job_id'=>$this->job_id,
+            'job_title'=>$this->job->title,
             'user_info'=>$this->user_info,
             'status'=>$this->status->name,
         ];

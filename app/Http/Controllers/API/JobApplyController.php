@@ -23,4 +23,7 @@ class JobApplyController extends Controller
         public function accept($id){
        return JobApplyFacade::acceptRequest($id);
     }
+        public function reject($id){
+       return JobApplyFacade::rejectRequest($id);
+    }
 }
